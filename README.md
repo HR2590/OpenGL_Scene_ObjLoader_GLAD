@@ -4,4 +4,4 @@ This is a small Object loader files Implementation made in OpenGL using GLAD lib
 Pending to Solve:
 -Memory Leak in Texture Loading inside Draw Function.
 
-This is not IA Generated.
+This is code was not made using IA.
