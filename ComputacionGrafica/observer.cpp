@@ -10,7 +10,6 @@ class baselight;
 void observer::Bind(mesh* InMesh)
 {
 	Meshes.push_back(InMesh);
-	
 }
 
 void observer::BindLight(mesh* InLight)

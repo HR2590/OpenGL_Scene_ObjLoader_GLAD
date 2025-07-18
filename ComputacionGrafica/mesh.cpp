@@ -97,9 +97,9 @@ void mesh::SetShininess() const
 	glUniform1f(shineUniform, shine);
 }
 
-void mesh::BindTexture(const int& InTextureNum)
+void mesh::BindTexture()
 {
-	texture.BindTexture(InTextureNum);
+	texture.BindTexture();
 }
 
 
@@ -124,16 +124,11 @@ void mesh::DeleteBuffer() const
 void mesh::TexturePrep()
 {
 	if (meshBufferData.pathTexture.empty()) return;
-	//TexturePreparation
-	texture.ActiveTexture(GL_TEXTURE0);
-	texture.BindTexture(GL_TEXTURE_2D);
-	texture.SetParameter(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	texture.SetParameter(GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	texture.SetParameter(GL_TEXTURE_WRAP_S, GL_REPEAT);
-	texture.SetParameter(GL_TEXTURE_WRAP_T, GL_REPEAT);
-	texture.CreateImage(GL_RGB);
-	texture.SetUniform(programID);
-	//texture.FreeTexture();
+	
+	texture.ActiveTexture(0);
+	texture.BindTexture();
+
+
 }
 
 bool mesh::AttachShaders() const

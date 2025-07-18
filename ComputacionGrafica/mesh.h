@@ -34,7 +34,7 @@ protected:
 
 	//Internal Functions
 	bool CompileShaders()const;
-	void BindTexture(const int& InTextureNum);
+	void BindTexture();
 	bool AttachShaders() const;
 	void DeleteShaders()const;
 	void DeleteBuffer()const;
