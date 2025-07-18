@@ -9,11 +9,14 @@ class Texture
 	GLuint texture;
 	GLuint texUniform;
 	unsigned char* bytes;
+	
 public:
+
 	explicit Texture(const string& InPathImage);
-	void CreateTexture(const string& InPathImage);
-	void BindTexture(const int& InTextureType);
-	void ActiveTexture(const int& InActiveTexture);
+	void LoadImgTexture(const string& InPathImage);
+	void BindTexture();
+	void ActiveTexture(int InTextureUnit);
+	void GenerateTexture(const int& InTextureType);
 	void SetParameter(const int& InParameterName, const int& InParameter) const;
 	void CreateImage(const int& InFormat) const;
 	void SetUniform(const unsigned int& InShaderProgram);
@@ -23,4 +26,5 @@ public:
 
 
 };
+
 

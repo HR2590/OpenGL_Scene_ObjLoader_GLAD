@@ -53,9 +53,9 @@ void camera::BindObject(mesh* InMesh)
 
 void camera::BindLight(const vector<mesh*>& InLight)
 {
-	for (auto* light:InLight)
-	{
-		Observer.BindLight(light);
+	for (auto* lights:InLight)
+	{	
+		Observer.BindLight(lights);
 	}
 	
 }

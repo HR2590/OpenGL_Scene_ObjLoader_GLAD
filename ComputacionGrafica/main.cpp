@@ -83,15 +83,12 @@ int main()
 	};
 	
 
-  
-
-
 	//Lights
 	vector<light> lights = {
 			light(InitTransforms.at(0).position, vec4(1.0f, 0.0f, 0.0f, 1.0f), 0.5f, 0.5f), //Light1
 			light(InitTransforms.at(1).position, vec4(0.0f, 0.0f, 0.5f, 1.0f),0.5f,0.5f)    //Light2
 	};
-    vector<mesh*> Lights =
+    vector<mesh*> MeshLights =
     {
     new baselight(meshdatas.at(0), lightShader,InitTransforms.at(0), cameraWindow,LightProgram,lights.at(0)), //Light1
     new baselight(meshdatas.at(0), lightShader,InitTransforms.at(1), cameraWindow,LightProgram,lights.at(1))  //Light2
@@ -99,7 +96,7 @@ int main()
     };
 
 
-    cameraWindow.BindLight(Lights);
+    cameraWindow.BindLight(MeshLights);
 
 	//Meshes
 
@@ -113,6 +110,7 @@ int main()
    
 	while (!glfwWindowShouldClose(window))
 	{
+		
 		processInput(window);
         ShaderProgram::ClearBuffer();
 
@@ -149,7 +147,7 @@ bool WindowInitializer(GLFWwindow*& window, int& value1)
 
 
 
-	window = glfwCreateWindow(width, height, "Computacion Grafica OpenGL Proyecto Final", nullptr, nullptr);
+	window = glfwCreateWindow(width, height, "Computacion Grafica OpenGL Proyecto", nullptr, nullptr);
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GLFW_TRUE);
 
 	if (!window)
